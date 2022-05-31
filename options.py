@@ -1,6 +1,7 @@
 """Implement an ArgParser for main.py ."""
 
 import argparse
+import json
 
 def options():
     """Construct the central argument parser, filled with useful defaults.
@@ -62,4 +63,6 @@ def options():
     parser.add_argument('--model_path_2', type=str, default=None)
     parser.add_argument('--save_epoch',  nargs="+", type=int, default=None)
 
+
+    parser.add_argument('--model_data_config', type=json.loads, default='{"dataset":"CIFAR10","partial_data_pc":1.0,"partial_data_style":"random"}')
     return parser

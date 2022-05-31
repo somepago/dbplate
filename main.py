@@ -21,10 +21,12 @@ from utils import get_loss_function, get_scheduler, get_random_images, produce_p
 from evaluation import train, test, test_on_trainset, decision_boundary, test_on_adv
 from options import options
 from utils import simple_lapsed_time
+import json
+
 
 args = options().parse_args()
 print(args)
-#torch.manual_seed(args.set_init_seed)
+# data_config = args.model_data_config
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 save_path = args.save_net
